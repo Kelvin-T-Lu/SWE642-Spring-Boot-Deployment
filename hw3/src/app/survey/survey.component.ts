@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./survey.component.css']
 })
 export class SurveyComponent {
-
+  today:string = new Date().toDateString();
 }
