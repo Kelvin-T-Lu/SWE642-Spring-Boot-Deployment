@@ -1,139 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-<div class="container-fluid">
-        <p> Today's date is {{today}}</p>
-        <!-- Start of form. -->
-        <p><strong>Required fields are marked with *</strong></p>
-        <div class="degree_form">
-            <form autocomplete="on">
-                <!--Username-->
-                <label> Username* </label>
-                <input type="text" id="username" name="username" required autofocus="True" />
-                <label> First Name*</label>
-                <input type="text" id="first_name_input" name="first_name" required />
-                <label> Last Name*</label>
-                <input type="text" id="last_name_input" name="last_name" required />
-                <label for="grad_month">Graduation Date*
-                    <!-- graduation month -->
-                    <input type="text" placeholder="Select a month" list="months" required />
-                    <datalist id="months">
-                        <option value="January">
-                        <option value="February">
-                        <option value="March">
-                        <option value="April">
-                        <option value="May">
-                        <option value="June">
-                        <option value="July">
-                        <option value="August">
-                        <option value="September">
-                        <option value="October">
-                        <option value="November">
-                        <option value="December">
+<body>
+    <div class="department-heading">
+        <form>
+            <div class="form-group">
+                <label for="username">Firstname:</label>
+                <input type="text" id="username" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Lastname:</label>
+                <input type="text" id="username" class="form-control" required>
+            </div>
 
-                    </datalist>
+            <div class="form-group">
+                <label for="address">Street Address:</label>
+                <input type="text" id="address" class="form-control" required>
+            </div>
 
-                    <!-- graduation year -->
-                    <input type="text" placeholder="####" id="grad_year_input" required>
-                </label>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" class="form-control" required>
+            </div>
 
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" id="state" class="form-control" required>
+            </div>
 
-                <!-- Address info-->
-                <br />
-                <label>Street Address*</label>
-                <input type="text" name="streetaddress" id="street_address_input" required />
-                <label>City* </label>
-                <input type="text" name="city" id="city_input" required />
-                <label>State* </label>
-                <input type="text" name="state" id="state_input" required />
+            <div class="form-group">
+                <label for="zip">Zip:</label>
+                <input type="text" id="zip" class="form-control" required>
+            </div>
 
-                <label>Zip Code* </label>
-                <input type=" text" name="zip_code" id="zip_input" required />
-                <label id="validate_zip_lbl"> </label>
+            <div class="form-group">
+                <label for="telephone">Telephone Number:</label>
+                <input type="tel" id="telephone" class="form-control" required>
+            </div>
 
-                <!--Email and Telephone #-->
-                <br />
-                <label>Email*</label>
-                <input type="email" name="email" id="email_input" placeholder="name@domain.com" required />
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" class="form-control" required>
+            </div>
 
-                <label> Telephone #*</label>
-                <input type="tel" placeholder="(###) ###-####" name="telephone_num" pattern="\(\d{3}\) +\d{3}-\d{4}"
-                    required />
+            <div class="form-group">
+                <label for="date">Date of Survey:</label>
+                <input type="date" id="date" class="form-control" required>
+            </div>
 
-                <!--URL and Survey Date-->
-                <br />
-                <label>URL</label>
-                <input type="url" placeholder="http://www.domain.com">
+            <div class="form-group">
+                <label for="likes">What did you like most about the campus?</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="students" class="form-check-input">
+                    <label for="students" class="form-check-label">Students</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="location" class="form-check-input">
+                    <label for="location" class="form-check-label">Location</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="campus" class="form-check-input">
+                    <label for="campus" class="form-check-label">Campus</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="atmosphere" class="form-check-input">
+                    <label for="atmosphere" class="form-check-label">Atmosphere</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="dorms" class="form-check-input">
+                    <label for="dorms" class="form-check-label">Dorm Rooms</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="sports" class="form-check-input">
+                    <label for="sports" class="form-check-label">Sports</label>
+                </div>
+            </div>
 
-                <label>Date of Survey*</label>
-                <input type="date" required>
+            <div class="form-group">
+                <label for="interest">How did you become interested in the university?</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="friends" name="interest" class="form-check-input">
+                    <label for="friends" class="form-check-label">Friends</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="television" name="interest" class="form-check-input">
+                    <label for="television" class="form-check-label">Television</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="internet" name="interest" class="form-check-input">
+                    <label for="internet" class="form-check-label">Internet</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="other" name="interest" class="form-check-input">
+                    <label for="other" class="form-check-label">Other</label>
+                </div>
+            </div>
 
-                <!--Likes-->
-                <br />
-                <label>What do you like about the campus?*</label>
-                <input type=checkbox name="likes" value="student" /> <label> Student </label>
-                <input type=checkbox name="likes" value="location" /> <label> Location </label>
-                <input type=checkbox name="likes" value="campus" /> <label> Campus </label>
-                <input type=checkbox name="likes" value="atmosphere" /> <label> Atmosphere </label>
-                <input type=checkbox name="likes" value="dorms" /> <label> Dorms </label>
-                <input type=checkbox name="likes" value="sports" /> <label> Sports </label>
-
-                <!--Interests-->
-                <br />
-                <label>
-                    What made you interested with George Mason University?*</label>
-                <input type=radio name="interests" value="friends" required />
-                <label>Friends</label>
-                <input type=radio name="interests" value="tv" />
-                <label>TV</label>
-                <input type=radio name="interests" value="internet" />
-                <label>Internet</label>
-                <input type=radio name="interests" value="other" />
-                <label>Others</label>
-
-                <!--Recommendation-->
-                <br />
-                <label> How likely are you going to recommend the school?*</label>
-
-                <select name="rating" required>
-
+            <div class="form-group">
+                <label for="recommendation">Likelihood of Recommending this School:</label>
+                <select id="recommendation" class="form-control">
                     <option>Very Likely</option>
                     <option>Likely</option>
                     <option>Unlikely</option>
                 </select>
-
-                <!--Raffle-->
-                <br />
-                <label>Raffle (Ten Numbers between [1,100])</label>
-                <input type="text" name="raffle" id="raffle_num" placeholder="#,#,#,#,#,#,#,#,#,#"
-                 />
-
-                <!-- Average and Max of Raffle labels. -->
-                <br />
-                <label id="avg_output_lbl"> </label>
-                <label id="max_output_lbl"> </label>
-
-                <!--Additional Comments-->
-                <br />
-                <label>Comments</label> <br />
-                <textarea rows="4" cols="36" placeholder="Enter Comments here."></textarea>
-
-                <!-- BUTTONS -->
-                <!--Submit button.-->
-                <br />
-                <input type="submit" value="Submit"  />
-
-                <!--ResetButton-->
-                <input type="reset" />
-
-                <!-- Cancel Button -->
-                <!-- TODO Redirect Cancel button. -->
-                <button onclick="window.location.href='./cs_dept.html'">
-                    Cancel
-                </button>
-            </form>
-        </div>
-
-</div>
-
-
-</html>
+            </div>
+            <div class="form-group">
+                <label for="comments">Additional Comments:</label>
+                <br/>
+                <textarea id="comments" class="form-control" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Cancel</button>
+        </form>
+    </div>
+</body>
