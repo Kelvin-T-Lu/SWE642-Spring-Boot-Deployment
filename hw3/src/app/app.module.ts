@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SurveyComponent } from './survey/survey.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SurveyPageComponent } from './survey-page/survey-page.component';
+import { SurveyDisplayComponent } from './survey-display/survey-display.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SurveyComponent,
-    NavbarComponent
+    NavbarComponent,
+    SurveyPageComponent,
+    SurveyDisplayComponent
   ],
   imports: [
     BrowserModule,
