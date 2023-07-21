@@ -6,6 +6,10 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  // @Input() surveyClass: string;
-  // @Input() surveyListClass: string;
+  @Input() surveyClass: string = '';
+  @Input() surveyDisplayClass: string = '';
+
+  constructor(){
+
+  }
 }
