@@ -2,7 +2,7 @@
     <div class="container">
         <div class="department-heading">
             TODO {{survey_model | json}}
-            <form #survey_form="ngForm" (ngSubmit)="survey_submit(survey_form.value)">
+            <form #survey_form="ngForm" >
                 <div class="form-group">
                     <label for="username">First name:</label>
                     <input type="text" id="firstName" class="form-control" name="firstName" [(ngModel)]="survey_model.firstName" required>
@@ -11,7 +11,6 @@
                     <label for="username">Last name:</label>
                     <input type="text" id="firstName" class="form-control" name="lastName" [(ngModel)]="survey_model.lastName"required>
                 </div>
-                TEST: {{survey_model.firstName}}
 
                 <div class="form-group">
                     <label for="address">Street Address:</label>
@@ -85,7 +84,7 @@
                     <br/>
                     <textarea id="comments" name="comments" [(ngModel)]="survey_model.comments" class="form-control" rows="4"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" (click)="survey_submit(survey_model)">  Submit</button>
                 <button type="submit" class="btn btn-primary">Cancel</button>
             </form>
         </div>
