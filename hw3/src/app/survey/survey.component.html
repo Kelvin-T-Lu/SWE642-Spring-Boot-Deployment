@@ -1,102 +1,80 @@
 <body>
     <div class="container">
         <div class="department-heading">
-            <form>
+            TODO {{survey_model | json}}
+            <form #survey_form="ngForm" (ngSubmit)="survey_submit(survey_form.value)">
                 <div class="form-group">
                     <label for="username">First name:</label>
-                    <input type="text" id="username" class="form-control" required>
+                    <input type="text" id="firstName" class="form-control" name="firstName" [(ngModel)]="survey_model.firstName" required>
                 </div>
                 <div class="form-group">
                     <label for="username">Last name:</label>
-                    <input type="text" id="username" class="form-control" required>
+                    <input type="text" id="firstName" class="form-control" name="lastName" [(ngModel)]="survey_model.lastName"required>
                 </div>
+                TEST: {{survey_model.firstName}}
 
                 <div class="form-group">
                     <label for="address">Street Address:</label>
-                    <input type="text" id="address" class="form-control" required>
+                    <input type="text" id="address" class="form-control" name="address" [(ngModel)]="survey_model.address"required>
                 </div>
 
                 <div class="form-group">
                     <label for="city">City:</label>
-                    <input type="text" id="city" class="form-control" required>
+                    <input type="text" id="city" class="form-control" name="city" [(ngModel)]="survey_model.city" required>
                 </div>
 
                 <div class="form-group">
                     <label for="state">State:</label>
-                    <input type="text" id="state" class="form-control" required>
+                    <input type="text" id="state" class="form-control" name="state" [(ngModel)]="survey_model.state" required>
                 </div>
 
                 <div class="form-group">
                     <label for="zip">Zip:</label>
-                    <input type="text" id="zip" class="form-control" required>
+                    <input type="text" id="zip" class="form-control" name= "zip" [(ngModel)]="survey_model.zip" required>
                 </div>
 
                 <div class="form-group">
                     <label for="telephone">Telephone Number:</label>
-                    <input type="tel" id="telephone" class="form-control" required>
+                    <input type="tel" id="telephone" class="form-control" name="telephone" [(ngModel)]="survey_model.telephone" required>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" class="form-control" required>
+                    <input type="email" id="email" class="form-control" name="email" [(ngModel)]="survey_model.email" required>
                 </div>
 
                 <div class="form-group">
                     <label for="date">Date of Survey:</label>
-                    <input type="date" id="date" class="form-control" required>
+                    <input type="date" id="date" class="form-control" name="date" [(ngModel)]="survey_model.date" required>
                 </div>
 
                 <div class="form-group">
                     <label for="likes">What did you like most about the campus?</label><br>
-                    <div class="form-check form-check-inline">
-                        <input type="checkbox" id="students" class="form-check-input">
-                        <label for="students" class="form-check-label">Students</label>
+                    <div class="checkbox" *ngFor="let likes of checkbox_likes; let i=index">
+                        <label>
+                            <input type="checkbox" 
+                            [name]="likes" [(ngModel)]=survey_model.likes[i]
+                            value="{{likes}}">
+                            {{likes}}
+                        </label>
+
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input type="checkbox" id="location" class="form-check-input">
-                        <label for="location" class="form-check-label">Location</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input type="checkbox" id="campus" class="form-check-input">
-                        <label for="campus" class="form-check-label">Campus</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input type="checkbox" id="atmosphere" class="form-check-input">
-                        <label for="atmosphere" class="form-check-label">Atmosphere</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input type="checkbox" id="dorms" class="form-check-input">
-                        <label for="dorms" class="form-check-label">Dorm Rooms</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input type="checkbox" id="sports" class="form-check-input">
-                        <label for="sports" class="form-check-label">Sports</label>
-                    </div>
+
+
                 </div>
 
                 <div class="form-group">
                     <label for="interest">How did you become interested in the university?</label><br>
-                    <div class="form-check form-check-inline">
-                        <input type="radio" id="friends" name="interest" class="form-check-input">
-                        <label for="friends" class="form-check-label">Friends</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input type="radio" id="television" name="interest" class="form-check-input">
-                        <label for="television" class="form-check-label">Television</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input type="radio" id="internet" name="interest" class="form-check-input">
-                        <label for="internet" class="form-check-label">Internet</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input type="radio" id="other" name="interest" class="form-check-input">
-                        <label for="other" class="form-check-label">Other</label>
+                    <div *ngFor="let choice of radio_interests">
+                        <input type="radio" id="{{choice}}" name="interest" [value]="choice" [(ngModel)]="survey_model.interest"
+                            (ngModelChange)="choose($event)" />
+                            <label class="toggle-button" for="{{choice}}">{{ " " + choice }}</label>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="recommendation">Likelihood of Recommending this School:</label>
-                    <select id="recommendation" class="form-control">
+                    <select id="recommendation" class="form-control" name="recommend" [(ngModel)]="survey_model.recommend">
                         <option>Very Likely</option>
                         <option>Likely</option>
                         <option>Unlikely</option>
@@ -105,7 +83,7 @@
                 <div class="form-group">
                     <label for="comments">Additional Comments:</label>
                     <br/>
-                    <textarea id="comments" class="form-control" rows="4"></textarea>
+                    <textarea id="comments" name="comments" [(ngModel)]="survey_model.comments" class="form-control" rows="4"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <button type="submit" class="btn btn-primary">Cancel</button>

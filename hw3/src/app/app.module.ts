@@ -8,7 +8,7 @@ import { SurveyComponent } from './survey/survey.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SurveyPageComponent } from './survey-page/survey-page.component';
 import { SurveyDisplayComponent } from './survey-display/survey-display.component';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +20,8 @@ import { SurveyDisplayComponent } from './survey-display/survey-display.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
