@@ -31,5 +31,8 @@ export class SurveyComponent {
     console.warn(form)
   }
 
+  reload(){
+    location.reload()
+  }
 
 }
