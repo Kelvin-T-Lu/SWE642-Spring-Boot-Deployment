@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import swe.restjpahw3.model.*;
+import swe.restjpahw3.repository.SurveyRepository;
 
 @Service
 public class SurveyService {

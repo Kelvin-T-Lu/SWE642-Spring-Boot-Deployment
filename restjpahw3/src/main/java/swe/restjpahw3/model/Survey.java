@@ -6,14 +6,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Column;
-import java.util.Date;
+import java.util.Objects;
 
 @Entity
 @Table(name="surveys")
 public class Survey {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(name="first_name", nullable=false)
@@ -181,7 +181,7 @@ public class Survey {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		StudentSurvey other = (StudentSurvey) obj;
+		Survey other = (Survey) obj;
 		return Objects.equals(city, other.city) && Objects.equals(comments, other.comments)
 				&& Objects.equals(date, other.date) && Objects.equals(email, other.email)
 				&& Objects.equals(firstName, other.firstName) && id == other.id
@@ -193,7 +193,7 @@ public class Survey {
 
 	@Override
 	public String toString() {
-		return "StudentSurvey [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", streetAddress="
+		return "Survey [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", streetAddress="
 				+ streetAddress + ", city=" + city + ", state=" + state + ", zipCode=" + zipCode
 				+ ", telephoneNumber=" + telephoneNumber + ", email=" + email + ", date=" + date + ", likes=" + likes
 				+ ", interests=" + interests + ", rating=" + rating + ", comments=" + comments + "]";
