@@ -8,7 +8,7 @@ export class SurveyData {
     email: string = '';
     telephone: string = '';
     date: Date = new Date();
-    likes: boolean[] = [false, false, false, false, false, false];
+    likes: boolean[] = Array.apply(null, Array(6)).map(i=>false);
     interest: string = '';
     recommend: string = '';
     comments: string = '';

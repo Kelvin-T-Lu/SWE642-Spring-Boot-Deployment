@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { SurveyData } from '../models/survey-data.model';
 import { Input,Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
+import { SurveyMethodsService } from '../survey_methods/survey-methods.service';
 @Component({
   selector: 'app-survey',
   templateUrl: './survey.component.html',
@@ -10,6 +11,9 @@ import { EventEmitter } from '@angular/core';
 
 export class SurveyComponent {
 
+  constructor(private _studentSurvey: SurveyMethodsService){
+
+  }
   // Functions/Variable for Interests radio buttons 
   radio_interests:string[] = [" Friends", " Television", " Internet", " Other"]
   
@@ -29,7 +33,16 @@ export class SurveyComponent {
 
   survey_submit(form:any){
     console.warn(form)
+    this._studentSurvey.postStudentSurvey(form).subscribe(
+      data=>{console.log("Success")}
+    );
+
+    alert("Survey submitted");
+    // this.reload();
   }
 
+  reload(){
+    location.reload()
+  }
 
 }
