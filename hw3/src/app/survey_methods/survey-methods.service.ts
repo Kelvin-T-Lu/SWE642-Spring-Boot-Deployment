@@ -16,7 +16,7 @@ export class SurveyMethodsService {
   getStudentSurveyList(): Observable<any> {
 
     alert("Survey recieved");
-    let output= this.httpClient.get("/survey_page");
+    let output= this.httpClient.get("http://localhost:8080/api/surveys");
 
     console.log(output);
 
@@ -26,18 +26,18 @@ export class SurveyMethodsService {
   postStudentSurvey(surveyData: SurveyData): Observable<any> {
 
     let httpParams = new HttpParams()
-      .set('firstName', surveyData.firstName)
-      .set('lastName', surveyData.lastName)
-      .set('address', surveyData.address)
+      .set('first_name', surveyData.firstName)
+      .set('last_name', surveyData.lastName)
+      .set('strees_address', surveyData.address)
       .set('city', surveyData.city)
       .set('state', surveyData.state)
       .set('zip', surveyData.zip)
-      .set('telephone', surveyData.telephone)
+      .set('phone_number', surveyData.telephone)
       .set('email', surveyData.email)
-      .set('date', surveyData.date.toString())
-      .set('likes', surveyData.likes.toString())
-      .set('interest', surveyData.interest)
-      .set('recommend', surveyData.recommend)
+      .set('date_of_survey', surveyData.date.toString())
+      .set('liked_most', surveyData.likes.toString())
+      .set('interested_in', surveyData.interest)
+      .set('likelihood', surveyData.recommend)
 
     const body = JSON.stringify(surveyData);
 
@@ -45,7 +45,7 @@ export class SurveyMethodsService {
 
     console.log("body format");
     console.log(body);
-    return this.httpClient.post("/survey_display", body)
+    return this.httpClient.post("http://localhost:8080/api/surveys/create", body, {params: httpParams})
     // {
     //   params: httpParams
     // })
