@@ -46,12 +46,9 @@ public class Survey {
 	@Column(name="likes", nullable=false)
 	private String likes;
 	
-	@Column(name="interests", nullable=false)
-	private String interests;
-	
-	// @Column(name="rating", nullable=false)
-	// private String rating;
-	
+	@Column(name="interest", nullable=false)
+	private String interest;
+		
 	@Column(name="recommend", nullable=false)
 	private String recommend;
 
@@ -142,21 +139,13 @@ public class Survey {
 		this.likes = likes;
 	}
 
-	public String getInterests() {
-		return interests;
+	public String getInterest() {
+		return interest;
 	}
 
-	public void setInterests(String interests) {
-		this.interests = interests;
+	public void setInterest(String interest) {
+		this.interest = interest;
 	}
-
-	// public String getRating() {
-	// 	return rating;
-	// }
-
-	// public void setRating(String rating) {
-	// 	this.rating = rating;
-	// }
 
 	public String getRecommend() {
 		return recommend;
@@ -176,7 +165,7 @@ public class Survey {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(city, comments, recommend, date, email, firstName, id, interests, lastName, likes, telephone,
+		return Objects.hash(city, comments, recommend, date, email, firstName, id, interest, lastName, likes, telephone,
 				state, address, zip);
 	}
 
@@ -193,7 +182,7 @@ public class Survey {
 				&& Objects.equals(comments, other.comments)
 				&& Objects.equals(date, other.date) && Objects.equals(email, other.email)
 				&& Objects.equals(firstName, other.firstName) && id == other.id
-				&& Objects.equals(interests, other.interests) && Objects.equals(lastName, other.lastName)
+				&& Objects.equals(interest, other.interest) && Objects.equals(lastName, other.lastName)
 				&& Objects.equals(likes, other.likes) && Objects.equals(telephone, other.telephone)
 				&& Objects.equals(state, other.state)
 				&& Objects.equals(address, other.address) && Objects.equals(zip, other.zip);
@@ -204,7 +193,7 @@ public class Survey {
 		return "Survey [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", address="
 				+ address + ", city=" + city + ", state=" + state + ", zipe=" + zip
 				+ ", telephone=" + telephone + ", email=" + email + ", date=" + date + ", likes=" + likes
-				+ ", interests=" + interests + ", recommend=" + recommend + ", comments=" + comments +"]";
+				+ ", interest=" + interest + ", recommend=" + recommend + ", comments=" + comments +"]";
 	}
 	
 }
