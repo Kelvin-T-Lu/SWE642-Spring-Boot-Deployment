@@ -16,14 +16,14 @@ public class Survey {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name="first_name", nullable=false)
+    @Column(name="firstName", nullable=false)
 	private String firstName;
 	
-	@Column(name="last_name", nullable=false)
+	@Column(name="lastName", nullable=false)
 	private String lastName;
 	
-	@Column(name="streetaddress", nullable=false)
-	private String streetAddress;
+	@Column(name="address", nullable=false)
+	private String address;
 	
 	@Column(name="city", nullable=false)
 	private String city;
@@ -31,16 +31,16 @@ public class Survey {
 	@Column(name="state", nullable=false)
 	private String state;
 	
-	@Column(name="zip_code", nullable=false)
-	private String zipCode;
+	@Column(name="zip", nullable=false)
+	private String zip;
 	
 	@Column(name="email", nullable=false)
 	private String email;
 
-    @Column(name="telephone_num", nullable=false)
-	private String telephoneNumber;
+    @Column(name="telephone", nullable=false)
+	private String telephone;
 	
-	@Column(name="date", nullable=false) //need to add name in survey.component.html
+	@Column(name="date", nullable=false)
 	private String date;
 	
 	@Column(name="likes", nullable=false)
@@ -52,8 +52,8 @@ public class Survey {
 	@Column(name="rating", nullable=false)
 	private String rating;
 	
-	@Column(name="comments", nullable=false) //add name in survey.component.html
-	private String comments;
+	@Column(name="recommend", nullable=false)
+	private String recommend;
 
 	public long getId() {
 		return id;
@@ -79,12 +79,12 @@ public class Survey {
 		this.lastName = lastName;
 	}
 
-	public String getStreetAddress() {
-		return streetAddress;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setStreetAddress(String streetAddress) {
-		this.streetAddress = streetAddress;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public String getCity() {
@@ -103,20 +103,20 @@ public class Survey {
 		this.state = state;
 	}
 
-	public String getZipCode() {
-		return zipCode;
+	public String getZip() {
+		return zip;
 	}
 
-	public void setZipCode(String zipCode) {
-		this.zipCode = zipCode;
+	public void setZip(String zip) {
+		this.zip = zip;
 	}
 
-	public String getTelephoneNumber() {
-		return telephoneNumber;
+	public String getTelephone() {
+		return telephone;
 	}
 
-	public void setTelephoneNumber(String telephoneNumber) {
-		this.telephoneNumber = telephoneNumber;
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
 	}
 
 	public String getEmail() {
@@ -159,18 +159,18 @@ public class Survey {
 		this.rating = rating;
 	}
 
-	public String getComments() {
-		return comments;
+	public String getRecommend() {
+		return recommend;
 	}
 
-	public void setComments(String comments) {
-		this.comments = comments;
+	public void setRecommend(String recommend) {
+		this.recommend = recommend;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(city, comments, date, email, firstName, id, interests, lastName, likes, telephoneNumber,
-				rating, state, streetAddress, zipCode);
+		return Objects.hash(city, recommend, date, email, firstName, id, interests, lastName, likes, telephone,
+				rating, state, address, zip);
 	}
 
 	@Override
@@ -182,21 +182,21 @@ public class Survey {
 		if (getClass() != obj.getClass())
 			return false;
 		Survey other = (Survey) obj;
-		return Objects.equals(city, other.city) && Objects.equals(comments, other.comments)
+		return Objects.equals(city, other.city) && Objects.equals(recommend, other.recommend)
 				&& Objects.equals(date, other.date) && Objects.equals(email, other.email)
 				&& Objects.equals(firstName, other.firstName) && id == other.id
 				&& Objects.equals(interests, other.interests) && Objects.equals(lastName, other.lastName)
-				&& Objects.equals(likes, other.likes) && Objects.equals(telephoneNumber, other.telephoneNumber)
+				&& Objects.equals(likes, other.likes) && Objects.equals(telephoneNumber, other.telephone)
 				&& Objects.equals(rating, other.rating) && Objects.equals(state, other.state)
-				&& Objects.equals(streetAddress, other.streetAddress) && Objects.equals(zipCode, other.zipCode);
+				&& Objects.equals(address, other.address) && Objects.equals(zip, other.zip);
 	}
 
 	@Override
 	public String toString() {
-		return "Survey [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", streetAddress="
-				+ streetAddress + ", city=" + city + ", state=" + state + ", zipCode=" + zipCode
-				+ ", telephoneNumber=" + telephoneNumber + ", email=" + email + ", date=" + date + ", likes=" + likes
-				+ ", interests=" + interests + ", rating=" + rating + ", comments=" + comments + "]";
+		return "Survey [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", address="
+				+ address + ", city=" + city + ", state=" + state + ", zipe=" + zip
+				+ ", telephone=" + telephone + ", email=" + email + ", date=" + date + ", likes=" + likes
+				+ ", interests=" + interests + ", rating=" + rating + ", recommend=" + recommend + "]";
 	}
 	
 
