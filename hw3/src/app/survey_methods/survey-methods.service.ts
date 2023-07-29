@@ -7,6 +7,8 @@ import { SurveyData } from '../models/survey-data.model';
 })
 export class SurveyMethodsService {
 
+  private baseURL = "http://localhost:8080";
+
   likesArrayLen:number = 6;
   likesArray:string[] = ["Student", "Location", "Campus", "Atmostphere", "Dorms", "Sports"];
 
@@ -16,7 +18,7 @@ export class SurveyMethodsService {
   getStudentSurveyList(): Observable<any> {
 
     alert("Survey recieved");
-    let output= this.httpClient.get("/survey_page");
+    let output= this.httpClient.get(this.baseURL + "/api/surveys/survey_page");
 
     console.log(output);
 
@@ -38,6 +40,7 @@ export class SurveyMethodsService {
       .set('likes', surveyData.likes.toString())
       .set('interest', surveyData.interest)
       .set('recommend', surveyData.recommend)
+      .set('comments', surveyData.comments)
 
     const body = JSON.stringify(surveyData);
 
@@ -45,7 +48,7 @@ export class SurveyMethodsService {
 
     console.log("body format");
     console.log(body);
-    return this.httpClient.post("/survey_display", body)
+    return this.httpClient.post(this.baseURL + "/api/surveys/survey_display", body)
     // {
     //   params: httpParams
     // })

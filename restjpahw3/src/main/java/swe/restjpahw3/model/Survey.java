@@ -14,7 +14,7 @@ public class Survey {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private long id;
 
     @Column(name="firstName", nullable=false)
 	private String firstName;
@@ -49,18 +49,17 @@ public class Survey {
 	@Column(name="interests", nullable=false)
 	private String interests;
 	
-	@Column(name="rating", nullable=false)
-	private String rating;
+	// @Column(name="rating", nullable=false)
+	// private String rating;
 	
 	@Column(name="recommend", nullable=false)
 	private String recommend;
 
+	@Column(name="comments", nullable=false)
+	private String comments;
+
 	public long getId() {
 		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
 	}
 
 	public String getFirstName() {
@@ -151,13 +150,13 @@ public class Survey {
 		this.interests = interests;
 	}
 
-	public String getRating() {
-		return rating;
-	}
+	// public String getRating() {
+	// 	return rating;
+	// }
 
-	public void setRating(String rating) {
-		this.rating = rating;
-	}
+	// public void setRating(String rating) {
+	// 	this.rating = rating;
+	// }
 
 	public String getRecommend() {
 		return recommend;
@@ -167,10 +166,18 @@ public class Survey {
 		this.recommend = recommend;
 	}
 
+	public String getComments() {
+		return comments;
+	}
+
+	public void setComments(String comments) {
+		this.comments = comments;
+	}
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(city, recommend, date, email, firstName, id, interests, lastName, likes, telephone,
-				rating, state, address, zip);
+		return Objects.hash(city, comments, recommend, date, email, firstName, id, interests, lastName, likes, telephone,
+				state, address, zip);
 	}
 
 	@Override
@@ -183,11 +190,12 @@ public class Survey {
 			return false;
 		Survey other = (Survey) obj;
 		return Objects.equals(city, other.city) && Objects.equals(recommend, other.recommend)
+				&& Objects.equals(comments, other.comments)
 				&& Objects.equals(date, other.date) && Objects.equals(email, other.email)
 				&& Objects.equals(firstName, other.firstName) && id == other.id
 				&& Objects.equals(interests, other.interests) && Objects.equals(lastName, other.lastName)
-				&& Objects.equals(likes, other.likes) && Objects.equals(telephoneNumber, other.telephone)
-				&& Objects.equals(rating, other.rating) && Objects.equals(state, other.state)
+				&& Objects.equals(likes, other.likes) && Objects.equals(telephone, other.telephone)
+				&& Objects.equals(state, other.state)
 				&& Objects.equals(address, other.address) && Objects.equals(zip, other.zip);
 	}
 
@@ -196,8 +204,7 @@ public class Survey {
 		return "Survey [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", address="
 				+ address + ", city=" + city + ", state=" + state + ", zipe=" + zip
 				+ ", telephone=" + telephone + ", email=" + email + ", date=" + date + ", likes=" + likes
-				+ ", interests=" + interests + ", rating=" + rating + ", recommend=" + recommend + "]";
+				+ ", interests=" + interests + ", recommend=" + recommend + ", comments=" + comments +"]";
 	}
 	
-
 }

@@ -24,7 +24,7 @@ public class SurveyController {
     }
 
     // Endpoint for survey submission --> this might change later
-    @PostMapping("/submit")
+    @PostMapping("/survey_display")
     public ResponseEntity<String> submitSurvey(@RequestBody Survey survey) {
         try {
             // Call the service to save the survey data in the database
@@ -36,7 +36,7 @@ public class SurveyController {
     }
 
     // Endpoint for retrieving all surveys
-    @GetMapping("/all")
+    @GetMapping("/survey_page")
     public ResponseEntity<List<Survey>> getAllSurveys() {
         List<Survey> surveys = surveyService.getAllSurveys();
         if (surveys.isEmpty()) {
@@ -44,4 +44,16 @@ public class SurveyController {
         }
         return ResponseEntity.ok(surveys);
     }
+
+    // End point for delete
+    // @DeleteMapping("/{id}")
+    // public ResponseEntity<String> deleteSurvey(@PathVariable Long id) {
+    //     boolean surveyDeleted = surveyService.deleteSurvey(id);
+
+    //     if (surveyDeleted) {
+    //         return new ResponseEntity<String>("Survey deleted successfully!", HttpStatus.OK);
+    //     } else {
+    //         return new ResponseEntity<String>("Survey with ID " + id + " not found.", HttpStatus.NOT_FOUND);
+    //     }
+    // }
 }
