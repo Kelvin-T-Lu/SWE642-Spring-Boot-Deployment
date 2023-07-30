@@ -10,7 +10,7 @@ Frontend (Angular (hw3)-
     -  ng serve
 Backend (Spring Boot)-
   - To build Docker Image
-  -     docker build -t "{user}/{repo}:{tag}" .
+    - docker build -t "{user}/{repo}:{tag}" .
 
   - To Run Docker Container:
-  -   docker run -p 8080:8080 "{user}/{repo}:{tag}"
+    - docker run -p 8080:8080 "{user}/{repo}:{tag}"
