@@ -13,6 +13,7 @@
   - To Run the Frontend (localhost:4200)
     -  ng serve
 ## Backend (Spring Boot restjpahw3)
+  - Currently configured to run with locally hosted database.
   - To Run Locally (HTTP://localhost:8080) with Java 17
     - java -jar restjpahw3/target/restjpahw3-0.0.1-SNAPSHOT.jar
   - To Run Docker Container (Assuming SQL is remotely hosted):
