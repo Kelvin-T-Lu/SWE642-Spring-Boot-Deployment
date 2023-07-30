@@ -1,3 +1,13 @@
+### HW 3 Swe642/Swe645
+  - Swe642
+    - Kelvin Lu
+
+  - Swe645
+    - Kelvin Lu
+    - Jimmy Tran
+    - Jacob Greon 
+  
+
 ## Frontend (Angular (hw3)
   - Install Node.js
   - Install angular via npm
