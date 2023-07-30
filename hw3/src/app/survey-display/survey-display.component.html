@@ -1,0 +1,36 @@
+<app-navbar [surveyClass]="''" [surveyDisplayClass]="'active'"></app-navbar>
+
+<div>
+    <table>
+        <tr>
+            <th> First Name </th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Telephone</th>
+            <th>Email</th>
+            <th>Date</th>
+            <th>Likes</th>
+            <th>Interested</th>
+            <th>Recommend</th>
+        </tr>
+        <tr *ngFor="let studentSurvey of studentSurveyList; let i = index">
+            <td>{{studentSurvey.firstName}}</td>
+            <td>{{studentSurvey.lastName}}</td>
+            <td>{{studentSurvey.address}}</td>
+            <td>{{studentSurvey.city}}</td>
+            <td>{{studentSurvey.state}}</td>
+            <td>{{studentSurvey.zip}}</td>
+            <td>{{studentSurvey.telephone}}</td>
+            <td>{{studentSurvey.email}}</td>
+            <td>{{studentSurvey.date | date:"MM/dd/yyyy"}}</td>
+            <td>{{studentSurvey.likes}}</td>
+            <td>{{studentSurvey.interest}}</td>
+            <td>{{studentSurvey.recommend}}</td>
+            <br/>
+        </tr>
+    </table>
+
+</div>
