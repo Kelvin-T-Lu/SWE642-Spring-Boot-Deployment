@@ -23,7 +23,6 @@ export class SurveyMethodsService {
   // Get all surveys.
   getStudentSurveyList(): Observable<any> {
 
-    alert("Survey recieved");
     let output= this.httpClient.get(this.baseURL + "/api/surveys/survey_page");
 
     console.log(output);
@@ -33,6 +32,17 @@ export class SurveyMethodsService {
 
   postStudentSurvey(surveyData: SurveyData): Observable<any> {
 
+    // Converts boolean[] into string[] based on checked checkboxes.
+    let convertedLikesArray = []
+    for (var index in this.likesArray) {
+      if (surveyData.likes[index] === true) {
+        convertedLikesArray.push(this.likesArray[index]);
+      }
+    }
+    surveyData.likes = convertedLikesArray;
+
+    console.log(convertedLikesArray);
+    
     let httpParams = new HttpParams()
       .set('firstName', surveyData.firstName)
       .set('lastName', surveyData.lastName)
@@ -42,15 +52,15 @@ export class SurveyMethodsService {
       .set('zip', surveyData.zip)
       .set('telephone', surveyData.telephone)
       .set('email', surveyData.email)
-      .set('date', surveyData.date.toString())
-      .set('likes', surveyData.likes.toString())
+      .set('date', surveyData.date.toJSON())
+      .set('likes', convertedLikesArray.toString())
       .set('interest', surveyData.interest)
       .set('recommend', surveyData.recommend)
       .set('comments', surveyData.comments)
+      // .set('likes', surveyData.likes.toString())
 
+    
     const body = JSON.stringify(surveyData);
-
-    alert("Survey sent");
 
     console.log("body format");
     console.log(body);

@@ -12,7 +12,7 @@
             <th>Telephone</th>
             <th>Email</th>
             <th>Date</th>
-            <th>Preferences</th>
+            <th>Likes</th>
             <th>Interested</th>
             <th>Recommend</th>
         </tr>
@@ -25,10 +25,11 @@
             <td>{{studentSurvey.zip}}</td>
             <td>{{studentSurvey.telephone}}</td>
             <td>{{studentSurvey.email}}</td>
-            <td>{{studentSurvey.date}}</td>
+            <td>{{studentSurvey.date | date:"MM/dd/yyyy"}}</td>
             <td>{{studentSurvey.likes}}</td>
             <td>{{studentSurvey.interest}}</td>
             <td>{{studentSurvey.recommend}}</td>
+            <br/>
         </tr>
     </table>
 

@@ -46,7 +46,7 @@ public class Survey {
 	private Date date;
 	
 	@Column(name="likes", nullable=false)
-	private boolean[] likes;
+	private String[] likes;
 	
 	@Column(name="interest", nullable=false)
 	private String interest;
@@ -133,11 +133,11 @@ public class Survey {
 		this.date = date;
 	}
 
-	public boolean[] getLikes() {
+	public String[] getLikes() {
 		return likes;
 	}
 
-	public void setLikes(boolean[] likes) {
+	public void setLikes(String[] likes) {
 		this.likes = likes;
 	}
 
@@ -185,7 +185,7 @@ public class Survey {
 				&& Objects.equals(date, other.date) && Objects.equals(email, other.email)
 				&& Objects.equals(firstName, other.firstName) && id == other.id
 				&& Objects.equals(interest, other.interest) && Objects.equals(lastName, other.lastName)
-				&& likes == other.likes && Objects.equals(telephone, other.telephone)
+				&& Objects.equals(likes, other.likes) && Objects.equals(telephone, other.telephone)
 				&& Objects.equals(state, other.state)
 				&& Objects.equals(address, other.address) && zip == other.zip;
 	}
