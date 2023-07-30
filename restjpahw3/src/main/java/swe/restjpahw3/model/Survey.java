@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Column;
+
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -16,10 +18,10 @@ public class Survey {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name="firstName", nullable=false)
+    @Column(name="first_name", nullable=false)
 	private String firstName;
 	
-	@Column(name="lastName", nullable=false)
+	@Column(name="last_name", nullable=false)
 	private String lastName;
 	
 	@Column(name="address", nullable=false)
@@ -32,7 +34,7 @@ public class Survey {
 	private String state;
 	
 	@Column(name="zip", nullable=false)
-	private String zip;
+	private int zip;
 	
 	@Column(name="email", nullable=false)
 	private String email;
@@ -41,10 +43,10 @@ public class Survey {
 	private String telephone;
 	
 	@Column(name="date", nullable=false)
-	private String date;
+	private Date date;
 	
 	@Column(name="likes", nullable=false)
-	private String likes;
+	private boolean[] likes;
 	
 	@Column(name="interest", nullable=false)
 	private String interest;
@@ -99,11 +101,11 @@ public class Survey {
 		this.state = state;
 	}
 
-	public String getZip() {
+	public int getZip() {
 		return zip;
 	}
 
-	public void setZip(String zip) {
+	public void setZip(int zip) {
 		this.zip = zip;
 	}
 
@@ -123,19 +125,19 @@ public class Survey {
 		this.email = email;
 	}
 
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 
-	public String getLikes() {
+	public boolean[] getLikes() {
 		return likes;
 	}
 
-	public void setLikes(String likes) {
+	public void setLikes(boolean[] likes) {
 		this.likes = likes;
 	}
 
@@ -183,9 +185,9 @@ public class Survey {
 				&& Objects.equals(date, other.date) && Objects.equals(email, other.email)
 				&& Objects.equals(firstName, other.firstName) && id == other.id
 				&& Objects.equals(interest, other.interest) && Objects.equals(lastName, other.lastName)
-				&& Objects.equals(likes, other.likes) && Objects.equals(telephone, other.telephone)
+				&& likes == other.likes && Objects.equals(telephone, other.telephone)
 				&& Objects.equals(state, other.state)
-				&& Objects.equals(address, other.address) && Objects.equals(zip, other.zip);
+				&& Objects.equals(address, other.address) && zip == other.zip;
 	}
 
 	@Override

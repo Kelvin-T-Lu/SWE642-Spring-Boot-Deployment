@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { SurveyData } from '../models/survey-data.model';
 @Injectable({
@@ -8,6 +8,12 @@ import { SurveyData } from '../models/survey-data.model';
 export class SurveyMethodsService {
 
   private baseURL = "http://localhost:8080";
+
+  headers={
+    headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+    })
+}
 
   likesArrayLen:number = 6;
   likesArray:string[] = ["Student", "Location", "Campus", "Atmostphere", "Dorms", "Sports"];
@@ -48,7 +54,8 @@ export class SurveyMethodsService {
 
     console.log("body format");
     console.log(body);
-    return this.httpClient.post(this.baseURL + "/api/surveys/survey_display", body)
+  
+    return this.httpClient.post(this.baseURL + "/api/surveys/survey_display", body, this.headers)
     // {
     //   params: httpParams
     // })

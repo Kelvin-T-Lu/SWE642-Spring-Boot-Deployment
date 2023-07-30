@@ -31,14 +31,19 @@ export class SurveyComponent {
   // Survey related functions.
   survey_model: SurveyData = new SurveyData();
 
-  survey_submit(form:any){
-    console.warn(form)
-    this._studentSurvey.postStudentSurvey(form).subscribe(
-      data=>{console.log("Success")}
-    );
+  // survey_submit(form:any){
+  //   // console.warn(form)
+  //   this._studentSurvey.postStudentSurvey(form);
 
-    alert("Survey submitted");
-    // this.reload();
+  //   alert("Survey submitted");
+  //   // this.reload();
+  // }
+
+  survey_submit(form:any) {
+    this._studentSurvey.postStudentSurvey(form).subscribe((data: any) => {
+      console.log("success")
+
+    }, (error: any) => console.log(error));
   }
 
   reload(){
