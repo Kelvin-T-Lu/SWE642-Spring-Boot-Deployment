@@ -25,5 +25,5 @@
       - cd restjpahw3
       - docker build -t "{user}/{repo}:{tag}" .
     - Docker Run image. 
-      - docker run -p 8080:8080 kelvintlu/swe642_hw3
+      - docker run -p 8080:8080 "{user}/{repo}:{tag}
    
