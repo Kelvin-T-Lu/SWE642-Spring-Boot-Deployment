@@ -3,7 +3,7 @@
     - Kelvin Lu
     - Ariunsaikhan Munkhbat
 
-## Frontend (Angular (hw3)
+## Frontend (Angular (hw3))
   - Install Node.js
   - Install angular via npm
     - npm install -g @angular/cli
