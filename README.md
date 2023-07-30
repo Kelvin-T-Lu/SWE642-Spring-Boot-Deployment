@@ -1,4 +1,4 @@
-##Frontend (Angular (hw3)
+## Frontend (Angular (hw3)
   - Install Node.js
   - Install angular via npm
     - npm install -g @angular/cli
@@ -8,7 +8,7 @@
 
   - To Run the Frontend (localhost:4200)
     -  ng serve
-##Backend (Spring Boot restjpahw3)
+## Backend (Spring Boot restjpahw3)
   - To build Docker Image
     - docker build -t "{user}/{repo}:{tag}" .
 
