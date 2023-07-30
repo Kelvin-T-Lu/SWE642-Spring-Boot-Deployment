@@ -10,7 +10,6 @@
     - Verify with - ng version
   - Create new angular project
     - ng new hw3
-
   - To Run the Frontend (localhost:4200)
     -  ng serve
 ## Backend (Spring Boot restjpahw3)
