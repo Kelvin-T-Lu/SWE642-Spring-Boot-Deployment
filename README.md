@@ -5,7 +5,7 @@
   - Swe645
     - Kelvin Lu
     - Jimmy Tran
-    - Jacob Greon 
+    - Jacob Groen
   
 
 ## Frontend (Angular (hw3)
