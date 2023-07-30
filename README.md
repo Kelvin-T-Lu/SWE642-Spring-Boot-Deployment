@@ -2,6 +2,7 @@
   - Swe642
     - Kelvin Lu
     - Ariunsaikhan Munkhbat
+    - Nehanth Chowdary
 
 ## Frontend (Angular (hw3))
   - Install Node.js
