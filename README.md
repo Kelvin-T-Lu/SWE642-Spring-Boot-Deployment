@@ -1,6 +1,7 @@
 ### HW 3 Swe642/Swe645
   - Swe642
     - Kelvin Lu
+    - Ariunsaikhan Munkhbat
 
   - Swe645
     - Kelvin Lu
