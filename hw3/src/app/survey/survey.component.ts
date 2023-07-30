@@ -32,6 +32,7 @@ export class SurveyComponent {
   survey_model: SurveyData = new SurveyData();
 
   survey_submit(form:any) {
+    alert("Survey Submitted")
     this._studentSurvey.postStudentSurvey(form).subscribe((data: any) => {
       console.log("success")
 

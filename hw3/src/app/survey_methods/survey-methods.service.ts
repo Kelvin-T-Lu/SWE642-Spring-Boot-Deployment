@@ -52,7 +52,7 @@ export class SurveyMethodsService {
       .set('zip', surveyData.zip)
       .set('telephone', surveyData.telephone)
       .set('email', surveyData.email)
-      .set('date', surveyData.date.toJSON())
+      .set('date', surveyData.date.toString())
       .set('likes', convertedLikesArray.toString())
       .set('interest', surveyData.interest)
       .set('recommend', surveyData.recommend)
