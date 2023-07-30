@@ -14,8 +14,10 @@
     -  ng serve
 ## Backend (Spring Boot restjpahw3)
   - Currently configured to run with a locally hosted database.
+  - To remove target file directory. 
+    - rm -rf /restjpahw3/target
   - To create SnapShot/Target file.
-  -    ./mvnw clean package
+    - ./mvnw clean package
   - To Run Locally (HTTP://localhost:8080) with Java 17
     - java -jar restjpahw3/target/restjpahw3-0.0.1-SNAPSHOT.jar
   - To Run Docker Container (Assuming SQL is remotely hosted):
