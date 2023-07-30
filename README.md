@@ -21,7 +21,7 @@
     -  ng serve
 ## Backend (Spring Boot restjpahw3)
   - To Run Locally (HTTP://localhost:8080) with Java 17
-    - java -jar /app/restjpahw3-0.0.1-SNAPSHOT.jar
+    - java -jar restjpahw3/target/restjpahw3-0.0.1-SNAPSHOT.jar
   - To Run Docker Container (Assuming SQL is remotely hosted):
     - docker run -p 8080:8080 kelvintlu/swe642_hw3
    
